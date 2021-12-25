@@ -1,19 +1,15 @@
-import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { StyleSheet } from 'react-native'
 import { Provider } from 'react-redux'
-import register from './pages/auth/register'
+import Navigator from './components/navigation/navigator'
 import { root_store } from './store'
+import { RootStackParamList } from './types/navigation'
 
 export default function App() {
-	const Stack = createNativeStackNavigator()
+	const Stack = createNativeStackNavigator<RootStackParamList>()
 	return (
 		<Provider store={root_store}>
-			<NavigationContainer>
-				<Stack.Navigator initialRouteName='Home'>
-					<Stack.Screen name='Home' component={register} />
-				</Stack.Navigator>
-			</NavigationContainer>
+			<Navigator />
 		</Provider>
 	)
 }

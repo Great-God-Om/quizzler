@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 })
 
 
-export default function register() {
+export default function Register() {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const submit = () => {
